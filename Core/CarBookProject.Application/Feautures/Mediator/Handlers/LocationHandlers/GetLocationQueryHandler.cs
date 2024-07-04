@@ -1,5 +1,5 @@
 ﻿using CarBookProject.Application.Feautures.Mediator.Queries.LocationQueries;
-using CarBookProject.Application.Feautures.Mediator.Results.LocationHandlers;
+using CarBookProject.Application.Feautures.Mediator.Results.LocationResults;
 using CarBookProject.Application.Interfaces;
 using CarBookProject.Domain.Entities;
 using MediatR;

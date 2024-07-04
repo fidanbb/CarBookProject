@@ -1,4 +1,4 @@
-﻿using CarBookProject.Application.Feautures.Mediator.Results.LocationHandlers;
+﻿using CarBookProject.Application.Feautures.Mediator.Results.LocationResults;
 using MediatR;
 using System;
 using System.Collections.Generic;

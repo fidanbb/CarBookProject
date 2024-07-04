@@ -1,5 +1,7 @@
 ﻿using CarBookProject.Application.Feautures.Mediator.Commands.LocationCommands;
+using CarBookProject.Application.Feautures.Mediator.Commands.ServiceCommands;
 using CarBookProject.Application.Feautures.Mediator.Queries.LocationQueries;
+using CarBookProject.Application.Feautures.Mediator.Queries.ServiceQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -46,13 +48,13 @@ namespace CarBookProject.WebApi.Controllers
 
         public async Task<IActionResult> RemoveLocation(int id)
         {
-            await _mediator.Send(new RemoveLocationCommand(id));
+            await _mediator.Send(new RemoveServiceCommand(id));
             return Ok("Location removed succesfully");
         }
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeLocation(UpdateLocationCommand command)
+        public async Task<IActionResult> UpdateLocation(UpdateLocationCommand command)
         {
             await _mediator.Send(command);
             return Ok("Location updated succesfully");

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Application.Feautures.Mediator.Results.LocationHandlers
+namespace CarBookProject.Application.Feautures.Mediator.Results.LocationResults
 {
     public class GetLocationQueryResult
     {

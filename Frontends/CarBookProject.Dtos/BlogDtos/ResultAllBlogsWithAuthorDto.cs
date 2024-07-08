@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CarBookProject.Dtos.BlogDtos
 {
@@ -19,5 +20,7 @@ namespace CarBookProject.Dtos.BlogDtos
         public string Description { get; set; }
         public string AuthorDescription { get; set; }
         public string AuthorImageUrl { get; set; }
+        public int CommentCount { get; set; }
+
     }
 }

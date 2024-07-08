@@ -33,7 +33,8 @@ namespace CarBookProject.Application.Feautures.Mediator.Handlers.BlogHandlers
                 AuthorName = x.Author.Name,
                 Description = x.Description,
                 AuthorDescription = x.Author.Description,
-                AuthorImageUrl = x.Author.ImageUrl
+                AuthorImageUrl = x.Author.ImageUrl,
+                CommentCount=x.Comments.Count
             }).ToList();
         }
     }

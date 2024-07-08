@@ -21,8 +21,19 @@ namespace CarBookProject.Persistence.Repositories.BlogRepositories
 
         public async Task<List<Blog>> GetAllBlogsWithAuthors()
         {
-            var values =await _carBookContext.Blogs.Include(x => x.Author).Include(y=>y.Category).ToListAsync();
+            var values =await _carBookContext.Blogs.Include(x => x.Author)
+                                                   .Include(y=>y.Category)
+                                                   .Include(z=>z.Comments)
+                                                   .ToListAsync();
             return values;
+        }
+
+        public async Task<Blog> GetBlogAuthorByBlogId(int id)
+        {
+            var value = await _carBookContext.Blogs.Include(x => x.Author)
+                                              .Where(y => y.BlogID == id)
+                                              .FirstOrDefaultAsync();
+            return value;
         }
 
         public async Task<List<Blog>> GetBlogByAuthorId(int id)
@@ -33,9 +44,11 @@ namespace CarBookProject.Persistence.Repositories.BlogRepositories
 
         public async Task<List<Blog>> GetLast3BlogsWithAuthors()
         {
-            var values =await _carBookContext.Blogs.Include(x => x.Author).OrderByDescending(x => x.BlogID)
-                                                                          .Take(3)
-                                                                          .ToListAsync();
+            var values =await _carBookContext.Blogs.Include(x => x.Author)
+                                                   .Include(z => z.Comments)
+                                                   .OrderByDescending(x => x.BlogID)
+                                                   .Take(3)
+                                                   .ToListAsync();
             return values;
         }
     }

@@ -15,5 +15,6 @@ namespace CarBookProject.Application.Feautures.Mediator.Results.BlogResults
         public DateTime CreatedDate { get; set; }
         public int CategoryID { get; set; }
         public string AuthorName { get; set; }
+        public int CommentCount { get; set; }
     }
 }

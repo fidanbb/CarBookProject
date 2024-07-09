@@ -1,0 +1,56 @@
+﻿@model CreateCarDto
+
+@{
+    ViewData["Title"] = "CreateCar";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">New Car Insert Page</h4>
+        <p class="card-subtitle mb-4">It is important that you fill in the basic information about the car. After data entry, you can complete the process by clicking the save button.</p>
+        <form method="post">
+            <div class="form-group">
+                <label for="exampleInputBrand">Brand</label>
+                @Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.BrandValues, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="exampleInputModel">Model</label>
+                <input type="text" class="form-control" id="exampleInputModel" asp-for="Model" placeholder="Please Add New Model">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputCoverImage">Cover Image</label>
+                <input type="text" class="form-control" id="exampleInputCoverImage" asp-for="CoverImageUrl" placeholder="Please Add Cover Image Link">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputKm">Km</label>
+                <input type="text" class="form-control" id="exampleInputKm" asp-for="Km" placeholder="Please Add KM Info">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputTransmission">Transmission</label>
+                <input type="text" class="form-control" id="exampleInputTransmission" asp-for="Transmission" placeholder="Please Add Transmission">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputSeat">Seat Count</label>
+                <input type="number" class="form-control" id="exampleInputSeat" asp-for="Seat" placeholder="Please Add Seat Count">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputLuggage">Luggage Count</label>
+                <input type="number" class="form-control" id="exampleInputLuggage" asp-for="Luggage" placeholder="Please Add Luggage Count">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFuel">Fuel Type</label>
+                <input type="text" class="form-control" id="exampleInputFuel" asp-for="Fuel" placeholder="Please Add Fuel Type">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputLuggage">Big Cover Image</label>
+                <input type="text" class="form-control" id="exampleInputLuggage" asp-for="BigImageUrl" placeholder="Cover Image Link to Appear in Car Details">
+            </div>
+            <button type="submit" class="btn btn-primary waves-effect waves-light">Save Car</button>
+            <a href="/AdminCar/Index" class="btn btn-danger waves-effect waves-light">Cancel</a>
+        </form>
+
+    </div> <!-- end card-body-->
+</div>
+
+

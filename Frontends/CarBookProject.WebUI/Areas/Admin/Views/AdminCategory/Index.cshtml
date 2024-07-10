@@ -1,0 +1,43 @@
+﻿@model List<ResultCategoryDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+                <div class="card">
+                    <div class="card-body">
+        <h4 class="card-title">Blog Categories List</h4>
+        <p class="card-subtitle mb-4">
+            This is the page where operations regarding the categories of blogs will be carried out. When entering a category, let's be careful to enter complete information.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Category Name</th>
+                                        <th>Delete</th>
+                                        <th>Update</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@item.Name</td>
+                                            <td><a href="/Admin/AdminCategory/RemoveCategory/@item.CategoryId" class="btn btn-outline-danger">Delete</a></td>
+                                            <td><a href="/Admin/AdminCategory/UpdateCategory/@item.CategoryId" class="btn btn-outline-success">Update</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminCategory/CreateCategory" class="btn btn-outline-primary">Add New Category</a>
+                        </div>
+                    </div>
+       
+

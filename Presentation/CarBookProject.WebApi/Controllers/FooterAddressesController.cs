@@ -42,7 +42,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("FooterAddress added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveFooterAddress(int id)
         {
@@ -52,7 +52,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeFooterAddress(UpdateFooterAddressCommand command)
+        public async Task<IActionResult> UpdateFooterAddress(UpdateFooterAddressCommand command)
         {
             await _mediator.Send(command);
             return Ok("FooterAddress updated succesfully");

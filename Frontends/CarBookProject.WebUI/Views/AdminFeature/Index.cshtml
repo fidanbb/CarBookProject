@@ -1,0 +1,49 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Car Feature List</h4>
+        <p class="card-subtitle mb-4">
+            You can add new features related to cars (Air Conditioning, Bluetooth, Audio, Electricity, etc.), edit the features list, and remove a feature from here. To ensure data consistency in the theme, please enter data as a multiple of 3.  You can add new features related to cars (Air Conditioning, Bluetooth, Audio, Electricity, etc.), edit the features list, and remove a feature from here. To ensure data consistency in the theme, please enter data as a multiple of 3.
+        </p>
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>            
+                        <th>Delete</th>
+                        <th>Update</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th>@count</th>
+                            <td>@item.Name</td>
+                       
+                            <td><a href="/AdminFeature/RemoveFeature/@item.FeatureID" class="btn btn-outline-danger">Delete</a></td>
+                            <td><a href="/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Update</a></td>
+                         
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+            <a href="/AdminFeature/CreateFeature/" class="btn btn-outline-primary">Add New Feature</a>
+        </div>
+
+    </div>
+    <!-- end card-body-->
+</div>
+

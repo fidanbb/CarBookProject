@@ -44,7 +44,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Location added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveLocation(int id)
         {

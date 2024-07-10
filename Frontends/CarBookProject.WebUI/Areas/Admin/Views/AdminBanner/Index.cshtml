@@ -1,0 +1,46 @@
+﻿@model List<ResultBannerDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Home Page Banner Area</h4>
+        <p class="card-subtitle mb-4">
+            You can edit the information in the banner area of ​​the home page below. In order to preserve the integrity of the theme, please enter only 1 piece of data. Otherwise, the integrity of the theme will be damaged.
+        </p>
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Video URL</th>
+                        <th>Video Description</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.VideoUrl</td>
+                            <td>@item.VideoDescription</td>
+                            <td><a href="/Admin/AdminBanner/RemoveBanner/@item.BannerID" class="btn btn-outline-danger">Delete</a></td>
+                            <td><a href="/Admin/AdminBanner/UpdateBanner/@item.BannerID" class="btn btn-outline-success">Update</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Admin/AdminBanner/CreateBanner" class="btn btn-outline-primary">Add New Banner</a>
+        </div>
+
+    </div>
+    <!-- end card-body-->
+</div>
+<!-- end card -->
+

@@ -1,0 +1,35 @@
+﻿@model CreateBannerDto
+@{
+    ViewData["Title"] = "CreateBanner";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+                    <div class="card-body">
+    <h4 class="card-title">New Banner Information Entry</h4>
+                        <p class="card-subtitle mb-4">
+        You can enter data into the banner field from the panel below. In order to avoid any distortion in the design, after entering a new banner, delete the previous banner area; only 1 banner data should remain.
+    </p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputTitle">Title</label>
+            <input type="text" class="form-control" id="exampleInputTitle" asp-for="Title" placeholder="Please Enter Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Description</label>
+            <input type="text" class="form-control" id="exampleInputDescription" asp-for="Description" placeholder="Please Enter Description">
+                            </div>
+                            <div class="form-group">
+            <label for="exampleInputVideoDescription">Video Description</label>
+            <input type="text" class="form-control" id="exampleInputVideoDescription" asp-for="VideoDescription" placeholder="Please AdEnterd Video Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputVideoUrl">Video Url</label>
+            <input type="text" class="form-control" id="exampleInputVideoUrl" asp-for="VideoUrl" placeholder="Please Enter Video's Youtube Embeded Link">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Save Banner </button>
+                            <a href="/Admin/AdminBanner/Index/" class="btn btn-daner waves-effect waves-light">Cancel </a>
+                        </form>
+                    </div>
+                </div>
+   

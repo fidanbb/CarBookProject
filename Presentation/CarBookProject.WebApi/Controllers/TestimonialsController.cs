@@ -42,7 +42,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Testimonial added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveTestimonial(int id)
         {
@@ -52,7 +52,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeTestimonial(UpdateTestimonialCommand command)
+        public async Task<IActionResult> UpdateTestimonial(UpdateTestimonialCommand command)
         {
             await _mediator.Send(command);
             return Ok("Testimonial updated succesfully");

@@ -44,7 +44,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("SocialMedia added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveSocialMedia(int id)
         {
@@ -54,7 +54,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeSocialMedia(UpdateSocialMediaCommand command)
+        public async Task<IActionResult> UpdateSocialMedia(UpdateSocialMediaCommand command)
         {
             await _mediator.Send(command);
             return Ok("SocialMedia updated succesfully");

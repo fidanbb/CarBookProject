@@ -42,7 +42,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Feature added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveFeature(int id)
         {
@@ -52,7 +52,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeFeature(UpdateFeatureCommand command)
+        public async Task<IActionResult> UpdateFeature(UpdateFeatureCommand command)
         {
             await _mediator.Send(command);
             return Ok("Feature updated succesfully");

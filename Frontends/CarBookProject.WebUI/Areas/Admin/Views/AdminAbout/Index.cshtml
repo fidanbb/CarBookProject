@@ -1,0 +1,40 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+                <div class="card">
+                    <div class="card-body">
+        <h4 class="card-title">Home Page About Us Area</h4>
+                        <p class="card-subtitle mb-4">
+            You can edit the information in the "about me" area of ​​the home page and the About Us page below. In order to preserve the integrity of the theme, please enter only 1 piece of data. Otherwise, the integrity of the theme will be damaged.
+        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Delete</th>
+                                        <th>Update</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Title</td>
+                                            <td>@item.Description</td>
+                                            <td><a href="/Admin/AdminAbout/RemoveAbout/@item.AboutID" class="btn btn-outline-danger">Delete</a></td>
+                                            <td><a href="/Admin/AdminAbout/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Update</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminAbout/CreateAbout" class="btn btn-outline-primary">Add New About</a>
+                        </div>
+                    </div>
+
+</div>

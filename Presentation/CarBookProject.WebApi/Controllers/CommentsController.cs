@@ -32,7 +32,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Comment added successfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveComment(int id)
         {
            var value =await _commentsRepository.GetById(id);

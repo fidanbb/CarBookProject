@@ -42,7 +42,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Blog added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveBlog(int id)
         {
@@ -52,7 +52,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeBlog(UpdateBlogCommand command)
+        public async Task<IActionResult> UpdateBlog(UpdateBlogCommand command)
         {
             await _mediator.Send(command);
             return Ok("Blog updated succesfully");

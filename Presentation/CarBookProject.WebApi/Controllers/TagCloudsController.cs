@@ -50,7 +50,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("TagCloud added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveTagCloud(int id)
         {
@@ -60,7 +60,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeTagCloud(UpdateTagCloudCommand command)
+        public async Task<IActionResult> UpdateTagCloud(UpdateTagCloudCommand command)
         {
             await _mediator.Send(command);
             return Ok("TagCloud updated succesfully");

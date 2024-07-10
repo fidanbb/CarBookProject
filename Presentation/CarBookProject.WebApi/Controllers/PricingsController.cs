@@ -42,7 +42,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Pricing added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemovePricing(int id)
         {
@@ -52,7 +52,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateePricing(UpdatePricingCommand command)
+        public async Task<IActionResult> UpdatePricing(UpdatePricingCommand command)
         {
             await _mediator.Send(command);
             return Ok("Pricing updated succesfully");

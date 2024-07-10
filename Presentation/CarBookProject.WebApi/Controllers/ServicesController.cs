@@ -43,7 +43,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Service added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveService(int id)
         {
@@ -53,7 +53,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeService(UpdateServiceCommand command)
+        public async Task<IActionResult> UpdateService(UpdateServiceCommand command)
         {
             await _mediator.Send(command);
             return Ok("Service updated succesfully");

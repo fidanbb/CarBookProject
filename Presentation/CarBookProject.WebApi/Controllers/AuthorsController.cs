@@ -42,7 +42,7 @@ namespace CarBookProject.WebApi.Controllers
             return Ok("Author added succesfully");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveAuthor(int id)
         {
@@ -52,7 +52,7 @@ namespace CarBookProject.WebApi.Controllers
 
         [HttpPut]
 
-        public async Task<IActionResult> UpdateeAuthor(UpdateAuthorCommand command)
+        public async Task<IActionResult> UpdateAuthor(UpdateAuthorCommand command)
         {
             await _mediator.Send(command);
             return Ok("Author updated succesfully");

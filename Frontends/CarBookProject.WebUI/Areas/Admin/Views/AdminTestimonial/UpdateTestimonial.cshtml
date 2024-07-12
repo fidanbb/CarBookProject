@@ -1,0 +1,36 @@
+﻿@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Update New Testimonial</h4>
+        <p class="card-subtitle mb-4">
+            This is our page where updating testimonials is done. All you have to do is fill in the information completely and click the save button.
+        </p>
+        <form method="post">
+            <input type="hidden" asp-for="TestimonialID" />
+            <div class="form-group">
+                <label for="exampleInputName">Name Surname</label>
+                <input type="text" class="form-control" id="exampleInputName" asp-for="Name" placeholder="Please Enter Name Surname">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputTitle">Title</label>
+                <input type="text" class="form-control" id="exampleInputTitle" asp-for="Title" placeholder="Please Enter Title">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputImageUrl">Image Url</label>
+                <input type="text" class="form-control" id="exampleInputImageUrl" asp-for="ImageUrl" placeholder="Please Enter Image Url">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputImageUrl">Comment</label>
+                <textarea rows="5" asp-for="Comment" class="form-control" placeholder="Please Enter Your Comment."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary waves-effect waves-light">Update Testimonial</button>
+            <a href="/Admin/AdminTestimonial/Index/" class="btn btn-danger waves-effect waves-light">Cancel</a>
+        </form>
+    </div>
+</div>
+

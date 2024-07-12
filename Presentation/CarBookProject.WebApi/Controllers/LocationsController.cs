@@ -48,7 +48,7 @@ namespace CarBookProject.WebApi.Controllers
 
         public async Task<IActionResult> RemoveLocation(int id)
         {
-            await _mediator.Send(new RemoveServiceCommand(id));
+            await _mediator.Send(new RemoveLocationCommand(id));
             return Ok("Location removed succesfully");
         }
 

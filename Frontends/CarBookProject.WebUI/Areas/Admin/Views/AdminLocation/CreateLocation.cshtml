@@ -1,0 +1,24 @@
+﻿@model CreateLocationDto
+@{
+    ViewData["Title"] = "CreateLocation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+                <div class="card">
+                    <div class="card-body">
+        <h4 class="card-title">Location Data Entry</h4>
+                        <p class="card-subtitle mb-4">
+            This is the page where location information about the points where vehicles are picked up and delivered is entered. Fill in the information completely.
+        </p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName">Location Name</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Name" placeholder="Please Add Location">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Save</button>
+                            <a href="/Admin/AdminLocation/Index/" class="btn btn-danger waves-effect waves-light">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+       

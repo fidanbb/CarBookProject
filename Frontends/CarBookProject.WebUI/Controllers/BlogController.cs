@@ -31,7 +31,7 @@ namespace CarBookProject.WebUI.Controllers
         public async Task<IActionResult> BlogDetail(int id)
         {
             ViewBag.v1 = "Blogs";
-            ViewBag.v2 = "Blog Detail and Comments  ";
+            ViewBag.v2 = "Blog Detail and Comments";
             ViewBag.blogid = id;
             return View();
         }

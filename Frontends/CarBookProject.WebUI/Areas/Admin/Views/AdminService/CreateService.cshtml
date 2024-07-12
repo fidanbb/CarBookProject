@@ -1,0 +1,33 @@
+﻿@model CreateServiceDto
+@{
+    ViewData["Title"] = "CreateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+                <div class="card">
+                    <div class="card-body">
+        <h4 class="card-title">Service Date Entry Page</h4>
+                        <p class="card-subtitle mb-4">
+            You can perform the operations on the admin side of the service list in the home page and services section from the page below. To maintain theme integrity, make 4 service entries.
+        </p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputTitle">Title</label>
+                                <input type="text" class="form-control" id="exampleInputTitle" asp-for="Title" placeholder="Please Enter Service Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Description</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" asp-for="Description" placeholder="Please Enter Service Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputIconUrl">Icon Url</label>
+                                <input type="text" class="form-control" id="exampleInputIconUrl" asp-for="IconUrl" placeholder="Please Enter Service Icon Url">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Save Service</button>
+                            <a href="/Admin/AdminService/Index/" class="btn btn-danger waves-effect waves-light">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+     

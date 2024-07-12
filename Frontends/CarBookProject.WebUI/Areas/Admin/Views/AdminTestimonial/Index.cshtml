@@ -1,0 +1,45 @@
+﻿@model List<ResultTestimonialDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Testimonial List</h4>
+                        <p class="card-subtitle mb-4">
+                            Below is our page where we can add and edit comments made by our customers about us.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name Surname</th>
+                                        <th>Title</th>
+                                        <th>Comment</th>
+                                        <th>Delete</th>
+                                        <th>Update</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td><img src="@item.ImageUrl" width="50" height="50" /></td>
+                                            <td>@item.Name</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Comment</td>
+                                            <td><a href="/Admin/AdminTestimonial/RemoveTestimonial/@item.TestimonialID" class="btn btn-outline-danger">Delete</a></td>
+                                            <td><a href="/Admin/AdminTestimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-outline-success">Update</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminTestimonial/CreateTestimonial" class="btn btn-outline-primary">Add New Testimonial</a>
+                        </div>
+                    </div>
+                </div>
+      

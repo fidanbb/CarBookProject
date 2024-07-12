@@ -1,0 +1,54 @@
+﻿@model List<ResultAllBlogsWithAuthorDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Blog List and Actions</h4>
+                        <p class="card-subtitle mb-4">
+                            You can see deletions, updates and blog list access for blogs. 
+                            Adding a new blog is not done by the admin. 
+                            If you want to add a blog, you must log in to the system as an author. 
+                            Each writer can only edit their own blogs. To do this, you can log in via 
+                            the Login/WriterLogin page in the application.
+                        </p>
+            <table id="basic-datatable" class="table dt-responsive nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Category</th>
+                                        <th>Date</th>
+                                        <th>Delete</th>
+                                        <th>Open Blog</th>
+                                        <th>Comments</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.AuthorName</td>
+                                            <td>@item.CategoryName</td>
+                                            <td>@item.CreatedDate</td>
+                                            <td><a href="/Admin/AdminBlog/RemoveBlog/@item.BlogID" class="btn btn-outline-danger">Delete</a></td>
+                                            <td><a href="/Blog/BlogDetail/@item.BlogID" class="btn btn-outline-dark">Open Blog</a></td>
+                                            <td><a href="/Admin/AdminComment/Index/@item.BlogID" class="btn btn-outline-warning">Comments</a></td>
+                        <td>@item.Description.Substring(0,50)</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+        
+

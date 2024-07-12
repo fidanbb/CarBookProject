@@ -11,14 +11,15 @@
         <p class="card-subtitle mb-4">
             You can view the car brand list, edit brands, and remove a brand from here.
         </p>
-        <div class="table-responsive">
-            <table class="table mb-0">
+     
+            <table id="basic-datatable" class="table dt-responsive nowrap">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Brand Name</th>
                         <th>Delete</th>
                         <th>Update</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,14 +31,16 @@
                             <td>@item.Name</td>
                             <td><a href="/AdminBrand/RemoveBrand/@item.BrandID" class="btn btn-outline-danger">Delete</a></td>
                             <td><a href="/AdminBrand/UpdateBrand/@item.BrandID" class="btn btn-outline-success">Update</a></td>
+                       <td></td>
                         </tr>
                     }
                 </tbody>
             </table>
+            <br />
             <a href="/AdminBrand/CreateBrand/" class="btn btn-outline-primary">Add New Brand</a>
         </div>
 
-    </div>
+
     <!-- end card-body-->
 </div>
 <!-- end card -->

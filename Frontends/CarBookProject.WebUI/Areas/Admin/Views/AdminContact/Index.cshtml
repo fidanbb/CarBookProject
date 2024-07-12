@@ -1,0 +1,52 @@
+﻿@model List<ResultContactDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Incoming Message Page</h4>
+                        <p class="card-subtitle mb-4">
+                            This is the page that contains the list of messages sent by users through the contact section on the home page. You can click on the relevant line and see the details of the message.
+                        </p>
+
+                        <table id="basic-datatable" class="table dt-responsive nowrap">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Sender</th>
+                                    <th>Subject</th>
+                                    <th>Email</th>
+                                    <th>Date</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.SendDate.ToShortDateString()</td>
+                                        <td>@item.Message</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+       
+
+
+

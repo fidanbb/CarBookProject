@@ -11,14 +11,15 @@
         <p class="card-subtitle mb-4">
             You can add new features related to cars (Air Conditioning, Bluetooth, Audio, Electricity, etc.), edit the features list, and remove a feature from here. To ensure data consistency in the theme, please enter data as a multiple of 3.  You can add new features related to cars (Air Conditioning, Bluetooth, Audio, Electricity, etc.), edit the features list, and remove a feature from here. To ensure data consistency in the theme, please enter data as a multiple of 3.
         </p>
-        <div class="table-responsive">
-            <table class="table mb-0">
+       
+            <table id="basic-datatable" class="table dt-responsive nowrap">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Name</th>            
                         <th>Delete</th>
                         <th>Update</th>
+                        <th></th>
                       
                     </tr>
                 </thead>
@@ -32,6 +33,7 @@
                        
                             <td><a href="/AdminFeature/RemoveFeature/@item.FeatureID" class="btn btn-outline-danger">Delete</a></td>
                             <td><a href="/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Update</a></td>
+                            <td></td>
                          
 
                         </tr>
@@ -40,8 +42,8 @@
 
                 </tbody>
             </table>
+            <br />
             <a href="/AdminFeature/CreateFeature/" class="btn btn-outline-primary">Add New Feature</a>
-        </div>
 
     </div>
     <!-- end card-body-->

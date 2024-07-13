@@ -4,6 +4,7 @@ using CarBookProject.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBookProject.Persistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20240713133455_added_rentACar_related_tables")]
+    partial class added_rentACar_related_tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +47,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("AboutID");
 
-                    b.ToTable("Abouts", (string)null);
+                    b.ToTable("Abouts");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Author", b =>
@@ -69,7 +72,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("AuthorID");
 
-                    b.ToTable("Authors", (string)null);
+                    b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Banner", b =>
@@ -98,7 +101,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("BannerID");
 
-                    b.ToTable("Banners", (string)null);
+                    b.ToTable("Banners");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Blog", b =>
@@ -136,7 +139,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("Blogs", (string)null);
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Brand", b =>
@@ -153,7 +156,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("BrandID");
 
-                    b.ToTable("Brands", (string)null);
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Car", b =>
@@ -200,7 +203,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("BrandID");
 
-                    b.ToTable("Cars", (string)null);
+                    b.ToTable("Cars");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.CarDescription", b =>
@@ -222,7 +225,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("CarID");
 
-                    b.ToTable("CarDescriptions", (string)null);
+                    b.ToTable("CarDescriptions");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.CarFeature", b =>
@@ -248,7 +251,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("FeatureID");
 
-                    b.ToTable("CarFeatures", (string)null);
+                    b.ToTable("CarFeatures");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.CarPricing", b =>
@@ -274,7 +277,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("PricingID");
 
-                    b.ToTable("CarPricings", (string)null);
+                    b.ToTable("CarPricings");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Category", b =>
@@ -291,7 +294,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Comment", b =>
@@ -324,7 +327,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("BlogID");
 
-                    b.ToTable("Comments", (string)null);
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Contact", b =>
@@ -356,7 +359,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("ContactID");
 
-                    b.ToTable("Contacts", (string)null);
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Customer", b =>
@@ -381,7 +384,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Feature", b =>
@@ -398,7 +401,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("FeatureID");
 
-                    b.ToTable("Features", (string)null);
+                    b.ToTable("Features");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.FooterAddress", b =>
@@ -427,7 +430,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("FooterAddressID");
 
-                    b.ToTable("FooterAddresses", (string)null);
+                    b.ToTable("FooterAddresses");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Location", b =>
@@ -444,7 +447,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("LocationID");
 
-                    b.ToTable("Locations", (string)null);
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Pricing", b =>
@@ -461,7 +464,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("PricingID");
 
-                    b.ToTable("Pricings", (string)null);
+                    b.ToTable("Pricings");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.RentACar", b =>
@@ -487,7 +490,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("LocationID");
 
-                    b.ToTable("RentACars", (string)null);
+                    b.ToTable("RentACars");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.RentACarProcess", b =>
@@ -539,7 +542,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("RentACarProcesses", (string)null);
+                    b.ToTable("RentACarProcesses");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Reservation", b =>
@@ -596,7 +599,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("PickUpLocationID");
 
-                    b.ToTable("Reservations", (string)null);
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Service", b =>
@@ -621,7 +624,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("ServiceID");
 
-                    b.ToTable("Services", (string)null);
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.SocialMedia", b =>
@@ -646,7 +649,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("SocialMediaID");
 
-                    b.ToTable("SocialMedias", (string)null);
+                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.TagCloud", b =>
@@ -668,7 +671,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasIndex("BlogID");
 
-                    b.ToTable("TagClouds", (string)null);
+                    b.ToTable("TagClouds");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Testimonial", b =>
@@ -697,7 +700,7 @@ namespace CarBookProject.Persistence.Migrations
 
                     b.HasKey("TestimonialID");
 
-                    b.ToTable("Testimonials", (string)null);
+                    b.ToTable("Testimonials");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Blog", b =>

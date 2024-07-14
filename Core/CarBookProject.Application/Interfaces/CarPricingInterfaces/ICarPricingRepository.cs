@@ -1,4 +1,5 @@
-﻿using CarBookProject.Domain.Entities;
+﻿using CarBookProject.Application.Dtos;
+using CarBookProject.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace CarBookProject.Application.Interfaces.CarPricingInterfaces
         Task<List<CarPricing>> GetLast5DailyCarPricingWithCars();
        
 
-        //List<CarPricingViewModel> GetCarPricingWithTimePeriod();
+        Task<List<CarPricingDto>> GetCarPricingWithTimePeriod();
 
     }
 }

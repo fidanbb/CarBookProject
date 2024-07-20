@@ -7,10 +7,12 @@ using CarBookProject.Application.Feautures.CQRS.Handlers.ContactHandlers;
 using CarBookProject.Application.Feautures.RepositoryPattern;
 using CarBookProject.Application.Interfaces;
 using CarBookProject.Application.Interfaces.BlogInterfaces;
+using CarBookProject.Application.Interfaces.CarDescriptionInterfaces;
 using CarBookProject.Application.Interfaces.CarFeatureInterfaces;
 using CarBookProject.Application.Interfaces.CarIntefaces;
 using CarBookProject.Application.Interfaces.CarPricingInterfaces;
 using CarBookProject.Application.Interfaces.RentACarInterfaces;
+using CarBookProject.Application.Interfaces.ReviewInterfaces;
 using CarBookProject.Application.Interfaces.StatisticsInterfaces;
 using CarBookProject.Application.Interfaces.TagCloudInterfaces;
 using CarBookProject.Application.Services;
@@ -18,19 +20,28 @@ using CarBookProject.Domain.Entities;
 using CarBookProject.Persistence.Context;
 using CarBookProject.Persistence.Repositories;
 using CarBookProject.Persistence.Repositories.BlogRepositories;
+using CarBookProject.Persistence.Repositories.CarDescriptionRepositories;
 using CarBookProject.Persistence.Repositories.CarFeatureRepositories;
 using CarBookProject.Persistence.Repositories.CarPricingRepositories;
 using CarBookProject.Persistence.Repositories.CarRepositories;
 using CarBookProject.Persistence.Repositories.CommentRepositories;
 using CarBookProject.Persistence.Repositories.RentACarRepositories;
+using CarBookProject.Persistence.Repositories.ReviewRepositories;
 using CarBookProject.Persistence.Repositories.StatisticsRepositories;
 using CarBookProject.Persistence.Repositories.TagCloudRepositories;
+using FluentValidation.AspNetCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+
+builder.Services.AddControllers().AddFluentValidation(x =>
+{
+    x.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -45,6 +56,8 @@ builder.Services.AddScoped(typeof(IStatisticsRepository), typeof(StatisticsRepos
 builder.Services.AddScoped(typeof(ITagCloudRepository), typeof(TagCloudRepository));
 builder.Services.AddScoped(typeof(IRentACarRepository), typeof(RentACarRepository));
 builder.Services.AddScoped(typeof(ICarFeatureRepository), typeof(CarFeatureRepository));
+builder.Services.AddScoped(typeof(ICarDescriptionRepository), typeof(CarDescriptionRepository));
+builder.Services.AddScoped(typeof(IReviewRepository), typeof(ReviewRepository));
 
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
@@ -85,6 +98,8 @@ builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
 
 builder.Services.AddApplicationService(builder.Configuration);
+
+
 
 
 var app = builder.Build();

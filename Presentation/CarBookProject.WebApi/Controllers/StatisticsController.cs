@@ -1,12 +1,14 @@
 ﻿using CarBookProject.Application.Feautures.Mediator.Queries.StatisticsQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UdemyCarBook.Application.Features.Mediator.Queries.StatisticsQueries;
 
 namespace CarBookProject.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+	[Authorize(Roles = "Admin")]
+	[Route("api/[controller]")]
     [ApiController]
     public class StatisticsController : ControllerBase
     {

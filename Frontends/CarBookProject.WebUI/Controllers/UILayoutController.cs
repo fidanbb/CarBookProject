@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBookProject.WebUI.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace CarBookProject.WebUI.Controllers
 {
@@ -6,7 +9,8 @@ namespace CarBookProject.WebUI.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+
+			return View();
         }
     }
 }

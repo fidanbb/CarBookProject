@@ -1,4 +1,5 @@
-﻿
+﻿  
+
 @{
     Layout = null;
 }
@@ -10,15 +11,19 @@
 
   
   <body>
+    
     @await Component.InvokeAsync("_NavbarUILayoutComponentPartial")
     @await Component.InvokeAsync("_MainCoverUILayoutComponentPartial")
 
     <!-- END nav -->
-    
+  
    
 
     @RenderBody()
+ 
+    
     @await Component.InvokeAsync("_FooterUILayoutComponentPartial")
+   
     @await Component.InvokeAsync("_ScriptUILayoutComponentPartial")
 
     

@@ -3,12 +3,14 @@ using CarBookProject.Application.Feautures.Mediator.Commands.ServiceCommands;
 using CarBookProject.Application.Feautures.Mediator.Queries.LocationQueries;
 using CarBookProject.Application.Feautures.Mediator.Queries.ServiceQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarBookProject.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+	
+	[Route("api/[controller]")]
     [ApiController]
     public class LocationsController : ControllerBase
     {

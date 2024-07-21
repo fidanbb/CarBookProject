@@ -1,10 +1,12 @@
 ﻿using CarBookProject.Dtos.AboutDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
 namespace CarBookProject.WebUI.Areas.Admin.Controllers
 {
+    
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/{id?}")]
     public class AdminAboutController : Controller

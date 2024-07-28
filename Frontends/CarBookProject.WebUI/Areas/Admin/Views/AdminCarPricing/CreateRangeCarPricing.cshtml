@@ -1,0 +1,35 @@
+﻿@model CreateCarPricingRangeDto
+
+
+@{
+    ViewData["Title"] = "CreateRangeCarPricing";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Adding Prices For Car</h4>
+        <p class="card-subtitle mb-4">
+            This is the page where the prices of the car will be add.
+        </p>
+        <form asp-action="CreateRangeCarPricing" method="post">
+            <input type="hidden"  value="@ViewBag.carId" asp-for="CarID" />
+            @for (int i = 0; i < Model.PricingDetails.Count; i++)
+            {
+                <div class="form-group">
+                    <input type="hidden" asp-for="@Model.PricingDetails[i].PricingID" class="form-control" />
+                    <label>@Model.PricingDetails[i].Name Amount</label>
+                    <input asp-for="PricingDetails[i].Amount" class="form-control" />
+                </div>
+            }
+         
+            <br />
+            <button class="btn btn-primary">Add Prices to Car</button>
+            <a href="/AdminCar/Index/" class="btn btn-danger"> Cancel</a>
+
+        </form>
+    </div>
+</div>
+
+

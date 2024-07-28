@@ -16,5 +16,7 @@ namespace CarBookProject.Application.Interfaces.CarPricingInterfaces
 
         Task<List<CarPricingDto>> GetCarPricingWithTimePeriod();
 
+        Task AddRange(List<CarPricing> carPricings);
+
     }
 }

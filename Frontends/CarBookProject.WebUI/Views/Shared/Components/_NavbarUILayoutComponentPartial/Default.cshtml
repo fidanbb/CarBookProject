@@ -16,14 +16,19 @@
 				<li class="nav-item"><a href="/CarPricing/Index/" class="nav-link">Pricing</a></li>
 				<li class="nav-item"><a href="/Car/Index/" class="nav-link">Cars</a></li>
 				<li class="nav-item"><a href="/Blog/Index/" class="nav-link">Blog</a></li>
-				<li class="nav-item"><a href="Contact/Index/" class="nav-link">Contact</a></li>
+				<li class="nav-item"><a href="/Contact/Index/" class="nav-link">Contact</a></li>
 				@if (User.Identity.IsAuthenticated)
 				{
 					<li class="nav-item"><a href="#" class="nav-link">@ViewBag.FullName</a></li>
 					<li class="nav-item"><a href="/Login/LogOut/" class="nav-link">Logout</a></li>
 
 				}
-				
+				else
+				{
+					<li class="nav-item"><a href="/Login/Index/" class="nav-link">Login</a></li>
+
+				}
+
 			</ul>
 		</div>
 	</div>

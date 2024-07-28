@@ -19,8 +19,6 @@ namespace CarBookProject.WebUI.ViewComponents.UILayoutViewComponents
         public IViewComponentResult Invoke()
 		{
             var token = _httpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == "carbooktoken")?.Value;
-
-            //var token = HttpContext.Request.Cookies["jwtToken"];
             if (token is not null)
             {
                 var handler = new JwtSecurityTokenHandler();

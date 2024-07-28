@@ -20,7 +20,13 @@ namespace CarBookProject.Persistence.Repositories.CarPricingRepositories
             _context = context;
         }
 
-		public async Task<List<CarPricingDto>> GetCarPricingWithTimePeriod()
+        public async Task AddRange(List<CarPricing> carPricings)
+        {
+           await _context.CarPricings.AddRangeAsync(carPricings);
+		   await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<CarPricingDto>> GetCarPricingWithTimePeriod()
 		{
 			var carPricingData = await _context.Cars
 	                                                .Include(c => c.Brand)

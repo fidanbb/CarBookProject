@@ -1,4 +1,5 @@
-﻿using CarBookProject.Application.Feautures.Mediator.Queries.CarPricingQueries;
+﻿using CarBookProject.Application.Feautures.Mediator.Commands.CarPricingCommands;
+using CarBookProject.Application.Feautures.Mediator.Queries.CarPricingQueries;
 using CarBookProject.Application.Feautures.Mediator.Results.CarPricingResults;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -41,5 +42,14 @@ namespace CarBookProject.WebApi.Controllers
 			var values = await _mediator.Send(new GetCarPricingWithTimePeriodQuery());
 			return Ok(values);
 		}
+
+        [HttpPost]
+
+        public async Task<IActionResult> CreateRangeCarPricing(CreateCarPricingRangeCommand command)
+        {
+            await _mediator.Send(command);
+
+            return Ok("Car Pricings Added");
+        }
 	}
 }

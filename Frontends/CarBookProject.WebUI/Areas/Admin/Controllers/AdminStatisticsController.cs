@@ -26,7 +26,7 @@ namespace CarBookProject.WebUI.Areas.Admin.Controllers
             {
 				var client = _httpClientFactory.CreateClient();
 				client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-				#region İstatistik1
+				#region statistic1
 				var responseMessage = await client.GetAsync("https://localhost:7269/api/Statistics/GetCarCount");
 				if (responseMessage.IsSuccessStatusCode)
 				{
@@ -36,10 +36,10 @@ namespace CarBookProject.WebUI.Areas.Admin.Controllers
 					ViewBag.v = values.CarCount;
 					ViewBag.v1 = v1;
 				}
-				#endregion
+                #endregion
 
-				#region İstatistik2
-				var responseMessage2 = await client.GetAsync("https://localhost:7269/api/Statistics/GetLocationCount");
+                #region  statistic2
+                var responseMessage2 = await client.GetAsync("https://localhost:7269/api/Statistics/GetLocationCount");
 				if (responseMessage2.IsSuccessStatusCode)
 				{
 					int locationCountRandom = random.Next(0, 101);
@@ -48,10 +48,10 @@ namespace CarBookProject.WebUI.Areas.Admin.Controllers
 					ViewBag.locationCount = values2.LocationCount;
 					ViewBag.locationCountRandom = locationCountRandom;
 				}
-				#endregion
+                #endregion
 
-				#region İstatistik3
-				var responseMessage3 = await client.GetAsync("https://localhost:7269/api/Statistics/GetAuthorCount");
+                #region statistic3
+                var responseMessage3 = await client.GetAsync("https://localhost:7269/api/Statistics/GetAuthorCount");
 				if (responseMessage3.IsSuccessStatusCode)
 				{
 					int authorCountRandom = random.Next(0, 101);
@@ -60,10 +60,10 @@ namespace CarBookProject.WebUI.Areas.Admin.Controllers
 					ViewBag.authorCount = values3.AuthorCount;
 					ViewBag.authorCountRandom = authorCountRandom;
 				}
-				#endregion
+                #endregion
 
-				#region İstatistik4
-				var responseMessage4 = await client.GetAsync("https://localhost:7269/api/Statistics/GetBlogCount");
+                #region statistic4
+                var responseMessage4 = await client.GetAsync("https://localhost:7269/api/Statistics/GetBlogCount");
 				if (responseMessage4.IsSuccessStatusCode)
 				{
 					int blogCountRandom = random.Next(0, 101);

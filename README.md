@@ -1,6 +1,6 @@
 # CarBook - Car Renting Project
 
-## The Main Purpose of Our Project
+## The Main Purpose of Project
 
 Developed with ASP.NET Core 8.0 Web API and MVC, this project allows the user to rent a car by location, list vehicle prices according 
 to vehicle brand models on a hourly, daily, weekly and monthly basis, make user-specific blog comments and browse comments, and provide various
